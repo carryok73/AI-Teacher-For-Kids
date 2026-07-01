@@ -1,0 +1,7 @@
+# Optional packages for experiments beyond the deployed web demo.
+# Browser speech recognition and speech synthesis already work without these.
+langchain==0.3.13
+langchain-openai==0.2.14
+gTTS==2.5.4
+SpeechRecognition==3.12.0
+python-multipart==0.0.20

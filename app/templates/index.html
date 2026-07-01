@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Teacher for Kids</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">AI</span>
+        <div>
+          <h1>AI Teacher</h1>
+          <p>Personal classroom for little learners</p>
+        </div>
+      </div>
+
+      <form id="studentForm" class="profile-form">
+        <label>
+          Child name
+          <input id="studentName" type="text" value="Aarav" maxlength="40" required>
+        </label>
+        <label>
+          Class
+          <select id="studentGrade">
+            <option>KG</option>
+            <option>Grade 1</option>
+            <option>Grade 2</option>
+            <option>Grade 3</option>
+          </select>
+        </label>
+        <button type="submit">Start Session</button>
+      </form>
+
+      <section class="subject-list" aria-label="Subjects">
+        <button class="subject-button active" data-subject="math">Math</button>
+        <button class="subject-button" data-subject="english">English</button>
+        <button class="subject-button" data-subject="science">Science</button>
+        <button class="subject-button" data-subject="gk">G.K.</button>
+      </section>
+    </aside>
+
+    <section class="teacher-stage">
+      <nav class="topbar">
+        <div>
+          <span class="eyebrow">Live Learning Room</span>
+          <h2 id="roomTitle">Math Adventure</h2>
+        </div>
+        <div class="stats">
+          <span><strong id="starCount">0</strong> stars</span>
+          <span><strong id="streakCount">0</strong> streak</span>
+        </div>
+      </nav>
+
+      <div class="lesson-grid">
+        <section class="avatar-panel" aria-label="Animated teacher">
+          <div id="avatar" class="avatar speaking">
+            <div class="hair"></div>
+            <div class="face">
+              <span class="eye left"></span>
+              <span class="eye right"></span>
+              <span class="mouth"></span>
+            </div>
+            <div class="body"></div>
+          </div>
+          <div class="teacher-bubble" id="teacherBubble">
+            Hello! Start a session and choose a subject. I will teach, listen, quiz, and cheer for you.
+          </div>
+          <div class="voice-controls">
+            <button id="listenButton" type="button" title="Speak to teacher">Listen</button>
+            <button id="speakButton" type="button" title="Read teacher answer aloud">Speak</button>
+            <button id="lessonButton" type="button" title="Start lesson">Lesson</button>
+          </div>
+        </section>
+
+        <section class="learning-panel">
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-view="chat">Ask</button>
+            <button class="tab" data-view="quiz">Quiz</button>
+            <button class="tab" data-view="progress">Progress</button>
+          </div>
+
+          <section id="chatView" class="view active">
+            <div id="chatLog" class="chat-log">
+              <article class="message teacher">Ask me a question like "What is addition?" or "Why do plants need sunlight?"</article>
+            </div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" placeholder="Type your question..." maxlength="500" required>
+              <button type="submit">Ask</button>
+            </form>
+          </section>
+
+          <section id="quizView" class="view">
+            <div class="quiz-card">
+              <div>
+                <span class="eyebrow">Gamified practice</span>
+                <h3 id="quizQuestion">Ready for a quick quiz?</h3>
+                <p id="quizHint">Press New Quiz when you are ready.</p>
+              </div>
+              <div id="quizOptions" class="quiz-options"></div>
+              <button id="newQuizButton" type="button">New Quiz</button>
+            </div>
+          </section>
+
+          <section id="progressView" class="view">
+            <div class="progress-layout">
+              <div>
+                <h3>Mastery</h3>
+                <div id="masteryList" class="mastery-list"></div>
+              </div>
+              <div>
+                <h3>Smart Recommendation</h3>
+                <p id="recommendation">Start a session to see the next step.</p>
+              </div>
+            </div>
+            <div>
+              <h3>Recent Activity</h3>
+              <div id="activityList" class="activity-list"></div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
