@@ -115,6 +115,7 @@ In Render, open your service, go to **Environment**, and add:
 
 ```text
 APP_ENV=production
+PYTHON_ENVIRONMENT=3.11.11
 OPENAI_MODEL=gpt-4o-mini
 OPENAI_API_KEY=your_key_here
 ```
